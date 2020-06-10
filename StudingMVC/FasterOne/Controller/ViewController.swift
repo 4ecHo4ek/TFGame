@@ -59,13 +59,15 @@ class ViewController: UIViewController {
     }
     //1
     private func tapped() {
-
-        if justValue.makeCalculates(statment: value.answer) || !value.modeIsOn {
+        
+        if justValue.makeCalculates(statment: value.answer) {
             value.score += 1
             scoreLabel.text = String(value.score)
         } else {
-            startEndGame()
-            endGame()
+            if value.modeIsOn {
+                startEndGame()
+                endGame()
+            }
         }
         
         justValue = setValues()
@@ -99,6 +101,7 @@ class ViewController: UIViewController {
         value.repeating = false
         setTime()
         oneMistakeButton.isEnabled = true
+        value.score = 0
     }
     
     private func startGamePosition() {
