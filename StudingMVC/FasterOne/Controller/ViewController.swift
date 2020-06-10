@@ -99,6 +99,7 @@ class ViewController: UIViewController {
     private func endGame() {
         startButton.setTitle("Start", for: .normal)
         value.repeating = false
+        scoreLabel.text = "Среднее время решения - \(round((time / Double(value.score)) * 10) / 10)"
         setTime()
         oneMistakeButton.isEnabled = true
         value.score = 0

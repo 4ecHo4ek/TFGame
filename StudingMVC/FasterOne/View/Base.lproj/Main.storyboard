@@ -24,7 +24,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0EY-er-K2j">
                                                 <rect key="frame" x="0.0" y="0.0" width="101" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="First mistake mode"/>
+                                                <state key="normal" title="До первой ошибки"/>
                                                 <connections>
                                                     <action selector="oneMistakeModeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="90V-No-gdN"/>
                                                 </connections>
@@ -77,7 +77,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-cC-PUA">
                                                 <rect key="frame" x="0.0" y="0.0" width="127" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal" title="True"/>
+                                                <state key="normal" title="Правда"/>
                                                 <connections>
                                                     <action selector="trueTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YA3-X5-gVf"/>
                                                 </connections>
@@ -85,7 +85,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKQ-5x-mve">
                                                 <rect key="frame" x="167" y="0.0" width="127" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal" title="False"/>
+                                                <state key="normal" title="Ложь"/>
                                                 <connections>
                                                     <action selector="falseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YV0-zj-uVk"/>
                                                 </connections>
