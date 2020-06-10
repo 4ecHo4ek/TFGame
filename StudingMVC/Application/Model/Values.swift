@@ -12,7 +12,7 @@ import Foundation
 struct Values {
     
     var (gamesDone, score) = (1, 0)
-    var (answer, repeating) = (false, false)
+    var (answer, repeating, oneMis) = (false, false, false)
     var timeChange = 0.1
-
+    var modeIsOn = false 
 }

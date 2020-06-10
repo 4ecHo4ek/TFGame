@@ -18,7 +18,7 @@ class ViewController: UIViewController {
             timeLabel.text = "\(round(time*10)/10)"
         }
     }
-   
+    
     
     @IBOutlet weak var firstNumbLabel: UILabel!
     @IBOutlet weak var signLabel: UILabel!
@@ -28,12 +28,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var oneMistakeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startGamePosition()
         
     }
+    
+    @IBAction func oneMistakeModeTapped(_ sender: UIButton) {
+        value.modeIsOn = !value.modeIsOn
+        setColor()
+    }
+    
+    
+    
     
     @IBAction func trueTapped(_ sender: UIButton) {
         value.answer = true
@@ -46,18 +55,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startTapped(_ sender: UIButton) {
-        startGamePosition()
-        justValue = setValues()
+        startEndGame()
     }
-    
+    //1
     private func tapped() {
-        
-        if justValue.makeCalculates(statment: value.answer) {
+
+        if justValue.makeCalculates(statment: value.answer) || !value.modeIsOn {
             value.score += 1
             scoreLabel.text = String(value.score)
+        } else {
+            startEndGame()
+            endGame()
         }
         
         justValue = setValues()
+        
     }
     
     private func setValues() -> Calculating {
@@ -68,6 +80,25 @@ class ViewController: UIViewController {
             String(calculating.signs[Int(calculating.elements.arrayOfSignsPosition)])
         secondNumbLabel.text = String(calculating.elements.secondOne)
         return calculating
+    }
+    
+    //MARK: - need to do
+    private func setColor() {
+        if value.modeIsOn == true {
+            oneMistakeButton.tintColor = .red
+            scoreLabel.tintColor = .red
+        } else {
+            oneMistakeButton.tintColor = .none
+            scoreLabel.tintColor = .none
+        }
+    }
+    
+    
+    private func endGame() {
+        startButton.setTitle("Start", for: .normal)
+        value.repeating = false
+        setTime()
+        oneMistakeButton.isEnabled = true
     }
     
     private func startGamePosition() {
@@ -89,15 +120,19 @@ class ViewController: UIViewController {
             scoreLabel.text = "0"
             time = 0.0
             setTime()
+            oneMistakeButton.isEnabled = false
         } else {
-            startButton.setTitle("Start", for: .normal)
-            value.repeating = false
-            setTime()
+            endGame()
         }
         
         value.gamesDone += 1
     }
-    
+    //2
+    private func startEndGame() {
+        startGamePosition()
+        justValue = setValues()
+    }
+    //3
     private func setTime() {
         
         timer = Timer.scheduledTimer(timeInterval: value.timeChange,

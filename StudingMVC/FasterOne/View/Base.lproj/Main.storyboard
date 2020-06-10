@@ -16,33 +16,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="IgJ-FU-1aU">
-                                <rect key="frame" x="60" y="144" width="294" height="450.5"/>
+                                <rect key="frame" x="60" y="74" width="294" height="590.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rD3-tX-q0z">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="8MH-Bd-TbE">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="200"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-xo-3lQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="60"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="50"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBv-Ie-W0B">
-                                                <rect key="frame" x="101.5" y="0.0" width="91" height="60"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="50"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLm-pS-pkO">
-                                                <rect key="frame" x="202.5" y="0.0" width="91.5" height="60"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="50"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0EY-er-K2j">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="First mistake mode"/>
+                                                <connections>
+                                                    <action selector="oneMistakeModeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="90V-No-gdN"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rD3-tX-q0z">
+                                                <rect key="frame" x="0.0" y="140" width="101" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-xo-3lQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="27" height="60"/>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="50"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBv-Ie-W0B">
+                                                        <rect key="frame" x="37" y="0.0" width="27" height="60"/>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="50"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLm-pS-pkO">
+                                                        <rect key="frame" x="74" y="0.0" width="27" height="60"/>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="50"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="5Dj-iO-LYF">
-                                        <rect key="frame" x="0.0" y="130" width="294" height="90.5"/>
+                                        <rect key="frame" x="0.0" y="270" width="294" height="90.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scoere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxT-ix-9SN">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="20"/>
@@ -59,10 +72,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="dSo-MI-bRE">
-                                        <rect key="frame" x="0.0" y="290.5" width="274" height="48"/>
+                                        <rect key="frame" x="0.0" y="430.5" width="294" height="48"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-cC-PUA">
-                                                <rect key="frame" x="0.0" y="0.0" width="117" height="48"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="True"/>
                                                 <connections>
@@ -70,7 +83,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKQ-5x-mve">
-                                                <rect key="frame" x="157" y="0.0" width="117" height="48"/>
+                                                <rect key="frame" x="167" y="0.0" width="127" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="False"/>
                                                 <connections>
@@ -80,7 +93,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="baE-xh-01P">
-                                        <rect key="frame" x="0.0" y="408.5" width="294" height="42"/>
+                                        <rect key="frame" x="0.0" y="548.5" width="294" height="42"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmx-Fg-eaN">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="42"/>
@@ -94,27 +107,34 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="baE-xh-01P" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="0V2-pv-2px"/>
-                                    <constraint firstAttribute="trailing" secondItem="baE-xh-01P" secondAttribute="trailing" id="9QL-Nk-d58"/>
-                                    <constraint firstItem="rD3-tX-q0z" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="Fhd-Hl-PIe"/>
-                                    <constraint firstItem="5Dj-iO-LYF" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="IDg-SX-hem"/>
-                                    <constraint firstAttribute="trailing" secondItem="dSo-MI-bRE" secondAttribute="trailing" constant="20" id="IpU-DW-0LK"/>
-                                    <constraint firstAttribute="trailing" secondItem="rD3-tX-q0z" secondAttribute="trailing" id="J1L-je-c4u"/>
-                                    <constraint firstAttribute="trailing" secondItem="5Dj-iO-LYF" secondAttribute="trailing" id="eJX-TD-tEe"/>
+                                    <constraint firstAttribute="trailing" secondItem="8MH-Bd-TbE" secondAttribute="trailing" priority="999" id="0cN-RC-IlZ"/>
+                                    <constraint firstItem="8MH-Bd-TbE" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="0tj-vW-INP"/>
+                                    <constraint firstItem="8MH-Bd-TbE" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="5Lc-IO-7HQ"/>
+                                    <constraint firstItem="8MH-Bd-TbE" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="BYN-gk-0pR"/>
+                                    <constraint firstItem="dSo-MI-bRE" firstAttribute="rightMargin" secondItem="5Dj-iO-LYF" secondAttribute="right" id="CvD-ia-zCt"/>
+                                    <constraint firstItem="5Dj-iO-LYF" firstAttribute="trailing" secondItem="IgJ-FU-1aU" secondAttribute="trailing" id="GZ2-qe-QOb"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Dj-iO-LYF" secondAttribute="trailing" id="IPp-iQ-9Ep"/>
+                                    <constraint firstItem="dSo-MI-bRE" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="K9h-OW-8Ct"/>
+                                    <constraint firstItem="8MH-Bd-TbE" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="NS6-81-NrI"/>
+                                    <constraint firstAttribute="trailing" secondItem="dSo-MI-bRE" secondAttribute="trailing" id="TdG-2k-TvB"/>
+                                    <constraint firstAttribute="trailing" secondItem="baE-xh-01P" secondAttribute="trailing" id="cCi-9Q-xEe"/>
+                                    <constraint firstItem="baE-xh-01P" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="lan-fS-iCs"/>
+                                    <constraint firstItem="5Dj-iO-LYF" firstAttribute="leading" secondItem="IgJ-FU-1aU" secondAttribute="leading" id="v73-tj-d32"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IgJ-FU-1aU" secondAttribute="trailing" constant="60" id="55j-c6-Hr4"/>
-                            <constraint firstItem="IgJ-FU-1aU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="X7A-pf-a7f"/>
-                            <constraint firstItem="IgJ-FU-1aU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="fZh-3Y-sd2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IgJ-FU-1aU" secondAttribute="trailing" constant="60" id="Qey-e5-Zyi"/>
+                            <constraint firstItem="IgJ-FU-1aU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="l4f-XS-Kze"/>
+                            <constraint firstItem="IgJ-FU-1aU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="vty-cl-dN4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="falseButton" destination="XKQ-5x-mve" id="15S-te-BVO"/>
                         <outlet property="firstNumbLabel" destination="RrB-xo-3lQ" id="pJm-fG-5l2"/>
+                        <outlet property="oneMistakeButton" destination="0EY-er-K2j" id="Bah-d1-6ju"/>
                         <outlet property="scoreLabel" destination="OxT-ix-9SN" id="DvX-Lt-rGu"/>
                         <outlet property="secondNumbLabel" destination="ZLm-pS-pkO" id="CB8-uM-gw4"/>
                         <outlet property="signLabel" destination="QBv-Ie-W0B" id="16H-MP-bks"/>
