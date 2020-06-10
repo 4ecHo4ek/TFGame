@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var (gamesDone, score) = (1, 0)
-    var (answer, repeating) = (false, false)
+    var value = Values()
     var justValue = Calculating()
     var timer = Timer()
     var time = 0.0 {
@@ -19,7 +18,7 @@ class ViewController: UIViewController {
             timeLabel.text = "\(round(time*10)/10)"
         }
     }
-    var timeChange = 0.1
+   
     
     @IBOutlet weak var firstNumbLabel: UILabel!
     @IBOutlet weak var signLabel: UILabel!
@@ -34,16 +33,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         startGamePosition()
         
-        
     }
     
     @IBAction func trueTapped(_ sender: UIButton) {
-        answer = true
+        value.answer = true
         tapped()
     }
     
     @IBAction func falseTapped(_ sender: UIButton) {
-        answer = false
+        value.answer = false
         tapped()
     }
     
@@ -54,17 +52,16 @@ class ViewController: UIViewController {
     
     private func tapped() {
         
-        if justValue.makeCalculates(statment: answer) {
-            score += 1
-            scoreLabel.text = String(score)
+        if justValue.makeCalculates(statment: value.answer) {
+            value.score += 1
+            scoreLabel.text = String(value.score)
         }
         
         justValue = setValues()
-        
-        
     }
     
     private func setValues() -> Calculating {
+        
         let calculating = Calculating()
         firstNumbLabel.text = String(calculating.elements.numberOne)
         signLabel.text =
@@ -74,46 +71,47 @@ class ViewController: UIViewController {
     }
     
     private func startGamePosition() {
+        
         firstNumbLabel.isHidden = !firstNumbLabel.isHidden
         signLabel.isHidden = !signLabel.isHidden
         secondNumbLabel.isHidden = !secondNumbLabel.isHidden
         falseButton.isHidden = !falseButton.isHidden
         trueButton.isHidden = !trueButton.isHidden
         
-        if gamesDone < 3 {
+        if value.gamesDone < 3 {
             scoreLabel.isHidden = !scoreLabel.isHidden
             timeLabel.isHidden = !timeLabel.isHidden
         }
         
-        if gamesDone % 2 == 0 {
-            startButton.setTitle("Start", for: .normal)
-            repeating = true
+        if value.gamesDone % 2 == 0 {
+            startButton.setTitle("Stop", for: .normal)
+            value.repeating = true
             scoreLabel.text = "0"
             time = 0.0
             setTime()
         } else {
-            startButton.setTitle("Stop", for: .normal)
-            repeating = false
+            startButton.setTitle("Start", for: .normal)
+            value.repeating = false
             setTime()
         }
         
-        gamesDone += 1
+        value.gamesDone += 1
     }
     
     private func setTime() {
         
-        timer = Timer.scheduledTimer(timeInterval: timeChange,
+        timer = Timer.scheduledTimer(timeInterval: value.timeChange,
                                      target: self,
                                      selector: #selector(tick),
                                      userInfo: nil,
-                                     repeats: repeating)
+                                     repeats: value.repeating)
         
     }
     
     @objc private func tick() {
         
-        if repeating {
-            time += timeChange
+        if value.repeating {
+            time += value.timeChange
         } else {
             timer.invalidate()
         }
